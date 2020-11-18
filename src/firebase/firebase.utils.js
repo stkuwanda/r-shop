@@ -5,13 +5,13 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const config = {
-	apiKey: 'AIzaSyD9Kyracmpj1tYYV4nn0TEKiVe4BZBlxwo',
-	authDomain: 'r-shop-db.firebaseapp.com',
-	databaseURL: 'https://r-shop-db.firebaseio.com',
-	projectId: 'r-shop-db',
-	storageBucket: 'r-shop-db.appspot.com',
-	messagingSenderId: '680810823332',
-	appId: '1:680810823332:web:40c450d3d3d6f43d187031',
+	apiKey: process.env.API_KEY,
+	authDomain: process.env.AUTH_DOMAIN,
+	databaseURL: process.env.DATABASE_URL,
+	projectId: process.env.PROJECT_ID,
+	storageBucket: process.env.STORAGE_BUCKET,
+	messagingSenderId: process.env.MESSAGING_SENDER_ID,
+	appId: process.env.APP_ID,
 };
 
 firebase.initializeApp(config);
