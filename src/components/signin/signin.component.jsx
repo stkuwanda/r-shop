@@ -49,7 +49,7 @@ class Signin extends Component {
 					/>
 					{/* <label htmlFor=''>Password</label> */}
 					<CustomButton type='submit'>sign in</CustomButton>
-					<CustomButton onClick={signInWithGoogle}>Google Signin</CustomButton> 
+					<CustomButton onClick={signInWithGoogle}>Google Signin</CustomButton>
 				</form>
 			</div>
 		);
