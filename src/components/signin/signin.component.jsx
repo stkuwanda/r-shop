@@ -31,7 +31,7 @@ class Signin extends Component {
 
 	render() {
 		const {email, password} = this.state;
-		
+
 		return (
 			<div className='signin'>
 				<h2>I already have an account</h2>
