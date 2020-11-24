@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CartIcon from '../carticon/carticon.component';
+import CartDropdown from '../cartdropdown/cartdropdown.component';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';
@@ -27,7 +29,9 @@ const Header = ({ currentUser }) => {
 						Sign In{' '}
 					</Link>
 				)}
+				<CartIcon />
 			</div>
+			<CartDropdown />
 		</div>
 	);
 };
