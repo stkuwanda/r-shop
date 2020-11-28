@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-	itemCount: selectItemCount(state),
+	itemCount: selectItemCount(state)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
