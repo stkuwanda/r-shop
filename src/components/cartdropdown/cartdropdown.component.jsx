@@ -8,7 +8,7 @@ import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import './cartdropdown.styles.scss';
 
-const CartDropdown = ({ cartItems, toggleCart, history }) => {
+const CartDropdown = ({ cartItems, history, dispatch }) => {
 	return (
 		<div className='cart-dropdown'>
 			<div className='cart-items'>
@@ -21,7 +21,7 @@ const CartDropdown = ({ cartItems, toggleCart, history }) => {
 				)}
 			</div>
 			<CustomButton onClick={() => {
-				toggleCart();
+				dispatch(toggleCartDropdown());
 				history.push('/checkout');}}>
 				Go To Checkout
 			</CustomButton>
@@ -33,8 +33,4 @@ const mapStateToProps = createStructuredSelector({
 	cartItems: selectCartItems,
 });
 
-const mapDispatchToProps = dispatch => ({
-	toggleCart: () => dispatch(toggleCartDropdown())
-});
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CartDropdown));
+export default withRouter(connect(mapStateToProps)(CartDropdown));
