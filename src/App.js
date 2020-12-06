@@ -47,7 +47,7 @@ class App extends Component {
 				<Switch>
 					<Route exact path='/' component={HomePage} />
 					<Route exact path='/shop' component={ShopPage} />
-					<Route path='/shop/:collectionId' component={CollectionPage} />
+					<Route exact path='/shop/:collectionId' component={CollectionPage} />
 					<Route exact path='/checkout' component={CheckoutPage} />
 					<Route
 						exact
@@ -56,13 +56,24 @@ class App extends Component {
 							currentUser ? <Redirect to='/' /> : <SigninAndSignupPage />
 						}
 					/>
+					<Route
+					path='*'
+					render={() => (
+						<div style={{display: 'flex', justifyContent: 'center'}}>
+							<h2>404 Page Not Found!</h2>
+						</div>
+					)}
+				/>
 				</Switch>
+				
 			</div>
 		);
 	}
 }
 
-const mapStateToProps = createStructuredSelector({ currentUser: selectCurrentUser});
+const mapStateToProps = createStructuredSelector({
+	currentUser: selectCurrentUser,
+});
 
 const mapDispatchToProps = dispatch => ({
 	setCurrentUser: user => dispatch(setCurrentUser(user)),
