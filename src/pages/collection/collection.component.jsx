@@ -6,7 +6,6 @@ import CollectItem from '../../components/collectionitem/collectionitem.componen
 import './collection.styles.scss';
 
 const CollectionPage = ({ collection }) => {
-	console.log(collection);
 	if(!collection){
 		return <Redirect to='/NOTFOUND' />
 	}
