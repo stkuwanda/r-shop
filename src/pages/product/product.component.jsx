@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './product.styles.scss';
 
 const ProductPage = () => {
   return (
