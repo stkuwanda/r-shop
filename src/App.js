@@ -47,7 +47,7 @@ class App extends Component {
 				<Header />
 				<Switch>
 					<Route exact path='/' component={HomePage} />
-					<Route exact path='/product/:productId' component={ProductPage} />
+					<Route exact path='/product/:categoryId/:productId' component={ProductPage} />
 					<Route exact path='/shop' component={ShopPage} />
 					<Route exact path='/shop/:collectionId' component={CollectionPage} />
 					<Route exact path='/checkout' component={CheckoutPage} />
