@@ -14,7 +14,7 @@ const CollectionItem = ({ item, addItem, category }) => {
 			<div className='collection-footer'>
 				<span className='name'>{name}</span>
 				<span className='price'>{price}</span>
-				<Link to={`/product/${category}/${name}`} > <span className="go">Go</span></Link>
+				<Link to={`/product/${category}/${name}`}> <span className="go">Go</span></Link>
 			</div>
 			<CustomButton onClick={() => addItem(item)} isInverted>Add To Cart</CustomButton>
 		</div>
