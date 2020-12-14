@@ -5,6 +5,7 @@ import ShopPage from './pages/shoppage/shoppage.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import Header from './components/header/header.component';
 import CollectionPage from './pages/collection/collection.component';
+import ProductPage from './pages/product/product.component';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { createStructuredSelector } from 'reselect';
@@ -46,6 +47,7 @@ class App extends Component {
 				<Header />
 				<Switch>
 					<Route exact path='/' component={HomePage} />
+					<Route exact path='/product/:productId' component={ProductPage} />
 					<Route exact path='/shop' component={ShopPage} />
 					<Route exact path='/shop/:collectionId' component={CollectionPage} />
 					<Route exact path='/checkout' component={CheckoutPage} />
