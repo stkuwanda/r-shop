@@ -49,4 +49,14 @@
       width: 10%;
     }
   }
+
+  .go {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    padding: 10px;
+    background-color: aliceblue;
+    opacity: 0.7;
+    cursor: pointer;
+  }
 }
