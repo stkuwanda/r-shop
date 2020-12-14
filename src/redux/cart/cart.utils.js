@@ -19,6 +19,14 @@ export const removeCartItem = (cartItems, cartItemToRemove) =>
 	cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id);
 
 export const reduceQuantity = (cartItems, cartItemForQtyReduction) => {
+	if(cartItems.length < 1){
+		return [];
+	}
+
+	if(!cartItemForQtyReduction){
+		return cartItems;
+	}
+
 	if(cartItemForQtyReduction.quantity === 1){
 		return cartItems.filter(cartItem => cartItem.id !== cartItemForQtyReduction.id);
 	}
