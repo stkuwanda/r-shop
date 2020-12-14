@@ -6,28 +6,34 @@ import CollectItem from '../../components/collectionitem/collectionitem.componen
 import './collection.styles.scss';
 
 const CollectionPage = ({ collection }) => {
-	if(!collection){
-		return <Redirect to='/NOTFOUND' />
+	if (!collection) {
+		return <Redirect to='/NOTFOUND' />;
 	}
 
-	const {title, items} = collection;
+	const { title, items, routeName } = collection;
 
 	return (
 		<div className='collection-page'>
 			<h2 className='title'>{title}</h2>
-			<div className="items">
-				{items.map(item => (<CollectItem key={item.id} item={item} />))}
+			<div className='items'>
+				{items.map(item => (
+					<CollectItem key={item.id} item={item} category={routeName} />
+				))}
 			</div>
 		</div>
 	);
 };
 
 const mapStateToProps = (state, ownProps) => {
-	const {match: {params: {collectionId}}} = ownProps;
+	const {
+		match: {
+			params: { collectionId },
+		},
+	} = ownProps;
 
 	return {
-		collection: selectCollection(collectionId)(state)
-	}
-}
+		collection: selectCollection(collectionId)(state),
+	};
+};
 
 export default connect(mapStateToProps)(CollectionPage);

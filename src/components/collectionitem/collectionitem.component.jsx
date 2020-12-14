@@ -6,23 +6,28 @@ import { addItem } from '../../redux/cart/cart.actions';
 import './collectionitem.styles.scss';
 
 const CollectionItem = ({ item, addItem, category }) => {
-	category = 'product';
-	const {imageUrl, name, price} = item;
+	//category = 'hats';
+	const { imageUrl, name, price } = item;
 	return (
 		<div className='collection-item'>
 			<div className='image' style={{ backgroundImage: `url(${imageUrl})` }} />
 			<div className='collection-footer'>
 				<span className='name'>{name}</span>
 				<span className='price'>{price}</span>
-				<Link to={`/product/${category}/${name}`}> <span className="go">Go</span></Link>
+				<Link to={`/product/${category}/${name}`}>
+					{' '}
+					<span className='go'>Go</span>
+				</Link>
 			</div>
-			<CustomButton onClick={() => addItem(item)} isInverted>Add To Cart</CustomButton>
+			<CustomButton onClick={() => addItem(item)} isInverted>
+				Add To Cart
+			</CustomButton>
 		</div>
 	);
 };
 
 const mapDispatchToProps = dispatch => ({
-	addItem: item => dispatch(addItem(item))
+	addItem: item => dispatch(addItem(item)),
 });
 
 export default connect(null, mapDispatchToProps)(CollectionItem);
