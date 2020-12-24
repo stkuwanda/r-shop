@@ -10,14 +10,14 @@ const CollectionPage = ({ collection }) => {
 		return <Redirect to='/NOTFOUND' />;
 	}
 
-	const { title, items, routeName } = collection;
+	const { title, items } = collection;
 
 	return (
 		<div className='collection-page'>
 			<h2 className='title'>{title}</h2>
 			<div className='items'>
 				{items.map(item => (
-					<CollectItem key={item.id} item={item} category={routeName} />
+					<CollectItem key={item.id} item={item} />
 				))}
 			</div>
 		</div>

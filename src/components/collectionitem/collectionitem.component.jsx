@@ -6,8 +6,9 @@ import CustomButton from '../custombutton/custombutton.component';
 import { addItem, reduceItemQty } from '../../redux/cart/cart.actions';
 import './collectionitem.styles.scss';
 
-const CollectionItem = ({ item, addItem, category, history, cartItem, subtractItem }) => {
-	const { imageUrl, name, price } = item;
+const CollectionItem = ({ item, addItem, history, cartItem, subtractItem }) => {
+	
+	const { imageUrl, name, price, category } = item;
 	return (
 		<div className='collection-item'>
 			<div className='image' onClick={() => history.push(`/product/${category}/${name}`)} style={{ backgroundImage: `url(${imageUrl})` }} >

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
 	removeItem,
@@ -8,11 +9,15 @@ import {
 import './checkoutitem.styles.scss';
 
 const CheckoutItem = ({ cartItem, dispatch }) => {
-	const { name, imageUrl, price, quantity } = cartItem;
+	const { name, imageUrl, price, quantity, category } = cartItem;
+	console.log('Checkout Item name:', name);
+	console.log('Checkout Category name:', category);
 	return (
 		<div className='checkout-item'>
 			<div className='image-container'>
-				<img src={imageUrl} alt='item' />
+				<Link to={`/product/${category}/${name}`}>
+					<img src={imageUrl} alt='item' />
+				</Link>
 			</div>
 			<span className='name'>{name}</span>
 			<span className='quantity'>

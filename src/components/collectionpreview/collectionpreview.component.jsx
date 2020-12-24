@@ -2,7 +2,7 @@ import React from 'react';
 import CollectionItem from '../collectionitem/collectionitem.component';
 import './collectionpreview.styles.scss';
 
-const CollectionPreview = ({ title, routeName, items }) => {
+const CollectionPreview = ({ title, items }) => {
 	return (
 		<div className='collection-preview'>
 			<h1 className='title'>{title.toUpperCase()}</h1>
@@ -10,7 +10,7 @@ const CollectionPreview = ({ title, routeName, items }) => {
 				{items
 					.filter((item, i) => i < 4)
 					.map(item => (
-						<CollectionItem key={item.id} item={item} category={routeName}/>
+						<CollectionItem key={item.id} item={item} />
 					))}
 			</div>
 		</div>
