@@ -22,7 +22,7 @@ const CollectionItem = ({ item, addItem, history, cartItem, subtractItem }) => {
 				Subtract From Cart
 			</CustomButton>) : null}
 			
-			<CustomButton onClick={() => addItem(item)} isInverted>
+			<CustomButton onClick={() => addItem(item)} isInverted style={{top: !cartItem ? '255px' : null}}>
 				Add To Cart
 			</CustomButton>
 		</div>
